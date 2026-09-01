@@ -16,10 +16,11 @@ htmlcov/
 data/*.db
 data/*.db-*
 
-# Frontend
-frontend/node_modules/
-frontend/dist/
-frontend/coverage/
+# This repository deploys the standalone static judge demo only.
+# The earlier backend/frontend scaffold remains local and is intentionally not published.
+backend/
+frontend/
+firebase-debug.log
 
 # Editors / OS
 .vscode/
