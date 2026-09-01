@@ -1,0 +1,25 @@
+{
+  "schema_version": "demo-1.0",
+  "title": "Takamol Synthetic Demo Indicators",
+  "disclaimer": "These 17 configurable indicators are synthetic demo variables, not the final thesis variables, medical biomarkers, or a validated underwriting basis.",
+  "missing_data_policy": "Missing values contribute zero to the score and lower coverage/confidence; they never increase risk by themselves.",
+  "indicators": [
+    {"key":"daily_steps","label_ar":"متوسط الخطوات اليومية","label_en":"Daily steps","unit":"step/day","source":"wearable_aggregate","direction":"protective","reference":7500,"scale":2500,"weight":-0.24,"min":0,"max":30000},
+    {"key":"active_minutes","label_ar":"دقائق النشاط اليومية","label_en":"Active minutes","unit":"min/day","source":"wearable_aggregate","direction":"protective","reference":35,"scale":20,"weight":-0.20,"min":0,"max":240},
+    {"key":"sedentary_minutes","label_ar":"دقائق الخمول اليومية","label_en":"Sedentary minutes","unit":"min/day","source":"wearable_aggregate","direction":"risk_increasing","reference":520,"scale":150,"weight":0.17,"min":0,"max":1440},
+    {"key":"sleep_minutes","label_ar":"مدة النوم","label_en":"Sleep duration","unit":"min/night","source":"wearable_aggregate","direction":"protective","reference":420,"scale":75,"weight":-0.11,"min":120,"max":720},
+    {"key":"sleep_efficiency","label_ar":"كفاءة النوم","label_en":"Sleep efficiency","unit":"percent","source":"wearable_aggregate","direction":"protective","reference":85,"scale":10,"weight":-0.10,"min":40,"max":100},
+    {"key":"resting_heart_rate","label_ar":"نبض الراحة","label_en":"Resting heart rate","unit":"bpm","source":"wearable_summary","direction":"risk_increasing","reference":68,"scale":12,"weight":0.14,"min":35,"max":140},
+    {"key":"heart_rate_variability","label_ar":"تباين نبض القلب","label_en":"Heart-rate variability","unit":"ms","source":"wearable_summary","direction":"protective","reference":45,"scale":18,"weight":-0.10,"min":5,"max":180},
+    {"key":"vo2max_estimate","label_ar":"تقدير اللياقة القلبية","label_en":"Estimated VO2 max","unit":"ml/kg/min","source":"wearable_estimate","direction":"protective","reference":38,"scale":9,"weight":-0.14,"min":10,"max":80},
+    {"key":"respiratory_rate","label_ar":"معدل التنفس أثناء الراحة","label_en":"Resting respiratory rate","unit":"breaths/min","source":"wearable_summary","direction":"risk_increasing","reference":16,"scale":3,"weight":0.07,"min":8,"max":35},
+    {"key":"activity_consistency","label_ar":"انتظام النشاط الأسبوعي","label_en":"Activity consistency","unit":"percent","source":"derived_aggregate","direction":"protective","reference":70,"scale":20,"weight":-0.10,"min":0,"max":100},
+    {"key":"weekly_workouts","label_ar":"جلسات التمرين الأسبوعية","label_en":"Weekly workouts","unit":"sessions/week","source":"derived_aggregate","direction":"protective","reference":3,"scale":2,"weight":-0.08,"min":0,"max":14},
+    {"key":"recovery_index","label_ar":"مؤشر التعافي التجريبي","label_en":"Demo recovery index","unit":"index","source":"derived_aggregate","direction":"protective","reference":70,"scale":18,"weight":-0.08,"min":0,"max":100},
+    {"key":"bmi","label_ar":"مؤشر كتلة الجسم المصرح به","label_en":"Declared BMI","unit":"kg/m2","source":"declared_profile","direction":"risk_increasing","reference":25,"scale":5,"weight":0.13,"min":14,"max":60},
+    {"key":"smoking_exposure","label_ar":"التعرض للتدخين المصرح به","label_en":"Declared smoking exposure","unit":"0-3 band","source":"declared_profile","direction":"risk_increasing","reference":0,"scale":1,"weight":0.18,"min":0,"max":3},
+    {"key":"chronic_condition_count","label_ar":"عدد الحالات المصرح بها","label_en":"Declared condition count","unit":"count","source":"declared_profile","direction":"risk_increasing","reference":0,"scale":1.5,"weight":0.16,"min":0,"max":8},
+    {"key":"medication_adherence","label_ar":"انتظام الدواء المصرح به","label_en":"Declared medication adherence","unit":"percent","source":"self_reported","direction":"protective","reference":90,"scale":20,"weight":-0.06,"min":0,"max":100},
+    {"key":"checkup_recency_months","label_ar":"مدة منذ آخر فحص دوري","label_en":"Months since check-up","unit":"months","source":"self_reported","direction":"risk_increasing","reference":12,"scale":12,"weight":0.07,"min":0,"max":120}
+  ]
+}

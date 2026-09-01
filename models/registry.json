@@ -1,0 +1,51 @@
+{
+  "registry_version": "1.0",
+  "last_reviewed": "2026-09-01",
+  "models": [
+    {
+      "id": "demo-risk-additive",
+      "version": "1.0.0",
+      "display_name": "Transparent Synthetic Demo Risk Index",
+      "type": "deterministic_additive_demo",
+      "status": "active_for_demo",
+      "validation_status": "synthetic_functional_tests_only",
+      "intended_use": "Explain the Takamol workflow using synthetic records and support a human-reviewed demonstration.",
+      "prohibited_uses": ["real underwriting", "automatic adverse action", "clinical interpretation", "claim probability representation"],
+      "artifact": null,
+      "owner": "Takamol Demo Model Governance",
+      "limitations": "Not trained, calibrated, externally validated, or approved for commercial decisions. Output is a relative demo index, not a probability."
+    },
+    {
+      "id": "deepsurv-risk-placeholder",
+      "version": "0.0.0",
+      "display_name": "DeepSurv Integration Placeholder",
+      "type": "deepsurv_placeholder",
+      "status": "blocked_missing_artifact",
+      "validation_status": "not_available",
+      "intended_use": "Contract placeholder for a future governed model package.",
+      "prohibited_uses": ["all runtime scoring until signed artifact, data dictionary, calibration, validation report, and approval are supplied"],
+      "artifact": null,
+      "owner": "Unassigned",
+      "limitations": "Fails closed. It never falls back silently to the demo engine."
+    },
+    {
+      "id": "demo-biological-age",
+      "version": "1.0.0",
+      "display_name": "Takamol Digital Biological Age Estimate",
+      "type": "transparent_demo_estimate",
+      "status": "active_for_demo",
+      "validation_status": "synthetic_functional_tests_only",
+      "intended_use": "Customer-facing explanation of lifestyle signal direction in the demo.",
+      "prohibited_uses": ["medical diagnosis", "clinical age", "standalone underwriting"],
+      "artifact": null,
+      "owner": "Takamol Demo Model Governance",
+      "limitations": "A bounded synthetic estimate derived from the same demo contributions; not a medical measurement."
+    }
+  ],
+  "research_reference": {
+    "label": "Research / Simulation Result — Not Commercial Traction",
+    "supplied_claims": {"deepsurv_c_index": 0.781, "cox_c_index": 0.712, "gini_improvement_percent": 50.9, "projected_roi_percent": 40},
+    "local_reproduction_status": "not_reproduced",
+    "reason": "Required participant-level wearable predictors, coherent labels, original artifacts, and complete pricing assumptions were unavailable."
+  }
+}
