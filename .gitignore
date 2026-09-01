@@ -21,6 +21,7 @@ data/*.db-*
 backend/
 frontend/
 firebase-debug.log
+.firebase/
 
 # Editors / OS
 .vscode/
